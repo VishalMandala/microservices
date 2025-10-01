@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -14,11 +18,27 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String fullName;
+
+    @NotBlank(message = "Username is mandatory")
+    private String username;
+
+    @NotBlank(message = "Email is mandatory")
+    @Email(message = "Please provide a valid email")
     private String email;
+
     private String mobile;
+
+    @NotBlank(message = "Role is mandatory")
     private String role;
+
+    @CreationTimestamp
     private LocalDateTime createdAt;
+
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+    @NotBlank(message = "Password is mandatory")
+    private String password;
 
     public User() {
     }
@@ -28,13 +48,15 @@ public class User {
                 String mobile,
                 String role,
                 LocalDateTime createdAt,
-                LocalDateTime updatedAt) {
+                LocalDateTime updatedAt,
+                String password) {
         this.fullName = fullName;
         this.email = email;
         this.mobile = mobile;
         this.role = role;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.password = password;
     }
 
     public long getId() {
@@ -91,5 +113,21 @@ public class User {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

@@ -1,5 +1,6 @@
 package com.vishal.controller;
 
+import com.vishal.exception.UserException;
 import com.vishal.model.User;
 import com.vishal.repository.UserRepository;
 import jakarta.validation.Valid;
@@ -32,7 +33,7 @@ public class UserController {
         if(otp.isPresent()){
             return otp.get();
         }else{
-            throw new Exception("user not found");
+            throw new UserException("user not found");
         }
     }
 
@@ -41,7 +42,7 @@ public class UserController {
     public User updateUser(@PathVariable("id") long id, @RequestBody User user) throws Exception {
         Optional<User> otp = userRepository.findById(id);
         if(otp.isEmpty()){
-            throw new Exception("User not found");
+            throw new UserException("User not found");
         }
         User existingUser = otp.get();
         existingUser.setFullName(user.getFullName());
@@ -55,7 +56,7 @@ public class UserController {
     public  String deleteUserById(@PathVariable long id) throws Exception {
         Optional<User> otp = userRepository.findById(id);
         if(otp.isEmpty()){
-            throw new Exception("User is not existing with the ID :" +id);
+            throw new UserException("User is not existing with the ID :" +id);
         }
         userRepository.deleteById(otp.get().getId());
         return "User deleted successfully";

@@ -27,6 +27,7 @@ public class SalonServiceImpl implements SalonService {
         salon.setOpenedTime(req.getOpenedTime());
         salon.setClosedTime(req.getClosedTime());
         salon.setMobile(req.getMobile());
+        salon.setImages(req.getImages());
         return salonRepository.save(salon);
     }
 

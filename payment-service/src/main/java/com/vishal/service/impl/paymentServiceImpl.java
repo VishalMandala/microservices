@@ -27,7 +27,7 @@ public class paymentServiceImpl implements paymentService {
 
     private final PaymentOrderRepository paymentOrderRepository;
 
-    @Value("${stripe.secret.key}")
+    @Value("${stripe.api.key}")
     private String StripeSecretKey;
 
     @Value("${razorpay.api.key}")

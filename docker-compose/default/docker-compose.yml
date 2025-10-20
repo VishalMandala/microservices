@@ -140,7 +140,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://userdb:3306/userdb"
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/
     deploy:
       resources:
         limits:
@@ -167,7 +167,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://bookingdb:3306/bookingdb"
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/
     deploy:
       resources:
         limits:
@@ -194,7 +194,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://categorydb:3306/categorydb"
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/
     deploy:
       resources:
         limits:
@@ -221,7 +221,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://paymentdb:3306/paymentdb"
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/
     deploy:
       resources:
         limits:
@@ -248,7 +248,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://salondb:3306/salondb"
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/
     deploy:
       resources:
         limits:
@@ -275,7 +275,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://service-offeringdb:3306/service-offeringdb"
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/
     deploy:
       resources:
         limits:
@@ -296,7 +296,7 @@ services:
     container_name: gateway-server
     environment:
       SPRING_APPLICATION_NAME: "gateway-server"
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/
     deploy:
       resources:
         limits:
